@@ -12,13 +12,18 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.2",
+    "@react-navigation/native-stack": "^6.9.8",
     "react": "18.2.0",
-    "react-native": "0.71.1"
+    "react-native": "0.71.1",
+    "react-native-safe-area-context": "^4.5.0",
+    "react-native-screens": "^3.19.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/preset-env": "^7.20.0",
     "@babel/runtime": "^7.20.0",
+    "@testing-library/react-native": "^11.5.0",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^29.2.1",
     "@types/react": "^18.0.24",
@@ -41,8 +46,5 @@
     "prettier": "^2.8.3",
     "react-test-renderer": "18.2.0",
     "typescript": "*"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }
