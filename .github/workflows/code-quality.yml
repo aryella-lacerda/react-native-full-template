@@ -1,0 +1,33 @@
+name: Code quality
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install lib dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Test code
+        run: yarn test --coverage
+
+      - name: Lint commit message
+        uses: wagoid/commitlint-github-action@v5
+
+      - name: Lint code
+        run: yarn lint
+
+      - name: Format code
+        run: yarn prettier --check .
+
+      - name: Typecheck code
+        run: yarn tsc
