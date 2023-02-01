@@ -7,7 +7,8 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
-import {useTranslation} from '../../../global/services/i18n/i18n-provider';
+
+import {useTranslation} from '@services/i18n/i18n-provider';
 
 export function HomeScreen(): JSX.Element {
   const {t} = useTranslation();

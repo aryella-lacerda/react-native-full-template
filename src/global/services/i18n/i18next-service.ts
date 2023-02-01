@@ -1,12 +1,15 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
+
+import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import RNLocalize from 'react-native-localize';
-import i18n from 'i18next';
+
 import {I18nInterface} from './i18n-interface';
 
 // Apparently needs to be declared outside of class to work. Not ideal.
 
 // TODO: Extract resources to another file
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const _i18n = i18n.use(initReactI18next).init({
   resources: {
     en: {
@@ -35,7 +38,7 @@ function handleLocalizationChange(): void {
   }
 }
 
-export class I18nService implements I18nInterface {
+class I18nService implements I18nInterface {
   async setup(): Promise<void> {
     RNLocalize.addEventListener('change', handleLocalizationChange);
   }

@@ -14,4 +14,9 @@ module.exports = {
     `node_modules/(?!${modulesThatShouldBeTransformed.join('|')})`,
   ],
   setupFilesAfterEnv: ['./jest.setup.js'],
+  moduleNameMapper: {
+    '@services/(.*)': '<rootDir>/src/global/services/$1',
+    '@navigation/(.*)': '<rootDir>/src/global/navigation/$1',
+    '@features/(.*)': '<rootDir>/src/features/$1',
+  },
 };
