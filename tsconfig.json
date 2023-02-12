@@ -6,6 +6,7 @@
       "@services/*": ["./src/global/services/*"],
       "@navigation/*": ["./src/global/navigation/*"],
       "@features/*": ["./src/features/*"]
-    }
+    },
+    "types": ["node", "jest"]
   }
 }

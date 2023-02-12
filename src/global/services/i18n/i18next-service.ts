@@ -10,7 +10,6 @@ import resources from './locales';
 
 const availableLanguages = Object.keys(resources);
 
-
 const _i18n = i18n.use(initReactI18next).init({
   resources,
   lng: RNLocalize.findBestAvailableLanguage(availableLanguages)?.languageTag,
