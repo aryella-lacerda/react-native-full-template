@@ -52,6 +52,7 @@
     "metro-react-native-babel-preset": "0.73.7",
     "prettier": "^2.8.3",
     "react-test-renderer": "18.2.0",
+    "reassure": "^0.7.1",
     "typescript": "*"
   }
 }
