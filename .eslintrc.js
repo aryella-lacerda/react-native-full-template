@@ -18,6 +18,9 @@ module.exports = {
     'import/resolver': {
       typescript: {},
     },
+    react: {
+      version: 'detect',
+    },
   },
   parserOptions: {
     ecmaVersion: 'latest',
@@ -76,6 +79,12 @@ module.exports = {
       'error',
       {
         varsIgnorePattern: '^_',
+      },
+    ],
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      {
+        allowedNames: ['getStyles'],
       },
     ],
   },

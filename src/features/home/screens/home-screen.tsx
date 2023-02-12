@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-color-literals */
 import React from 'react';
 import {
   SafeAreaView,
@@ -9,9 +8,12 @@ import {
 } from 'react-native';
 
 import {useTranslation} from '@services/i18n/i18n-provider';
+import {useStylesWithTheme} from '@services/themes/theme-hooks';
+import type {Theme} from '@services/themes/theme-interfaces';
 
 export function HomeScreen(): JSX.Element {
   const {t} = useTranslation();
+  const styles = useStylesWithTheme(getStyles);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,16 +27,19 @@ export function HomeScreen(): JSX.Element {
   );
 }
 
-const styles = StyleSheet.create({
-  // eslint-disable-next-line react-native/no-color-literals
-  container: {
-    alignItems: 'center',
-    backgroundColor: '#FFF',
-    flex: 1,
-    justifyContent: 'center',
-  },
-  text: {
-    color: '#000',
-    fontSize: 16,
-  },
-});
+const getStyles = (theme: Theme) => {
+  const styles = StyleSheet.create({
+    container: {
+      alignItems: 'center',
+      backgroundColor: theme.colors.background,
+      flex: 1,
+      justifyContent: 'center',
+    },
+    text: {
+      color: theme.colors.text,
+      fontSize: 16,
+    },
+  });
+
+  return styles;
+};
