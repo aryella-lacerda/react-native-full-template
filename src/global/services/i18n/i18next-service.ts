@@ -5,25 +5,15 @@ import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import RNLocalize from 'react-native-localize';
 
-import {I18nInterface} from './i18n-interface';
+import {I18nServiceInterface} from './i18n-interfaces';
+import resources from './locales';
 
-// Apparently needs to be declared outside of class to work. Not ideal.
+const availableLanguages = Object.keys(resources);
 
-// TODO: Extract resources to another file
+
 const _i18n = i18n.use(initReactI18next).init({
-  resources: {
-    en: {
-      translation: {
-        welcome: 'Welcome to React Native!',
-      },
-    },
-    pt: {
-      translation: {
-        welcome: 'Bem vindo ao React Native!',
-      },
-    },
-  },
-  lng: RNLocalize.findBestAvailableLanguage(['en', 'pt'])?.languageTag,
+  resources,
+  lng: RNLocalize.findBestAvailableLanguage(availableLanguages)?.languageTag,
   fallbackLng: 'en',
   interpolation: {
     escapeValue: false,
@@ -32,13 +22,14 @@ const _i18n = i18n.use(initReactI18next).init({
 });
 
 function handleLocalizationChange(): void {
-  const lng = RNLocalize.findBestAvailableLanguage(['en', 'pt'])?.languageTag;
+  const lng =
+    RNLocalize.findBestAvailableLanguage(availableLanguages)?.languageTag;
   if (lng !== undefined) {
     void i18n.changeLanguage(lng);
   }
 }
 
-class I18nService implements I18nInterface {
+class I18nService implements I18nServiceInterface {
   async setup(): Promise<void> {
     RNLocalize.addEventListener('change', handleLocalizationChange);
   }

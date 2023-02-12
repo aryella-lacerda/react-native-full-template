@@ -1,4 +1,4 @@
-export interface I18nInterface {
+export interface I18nServiceInterface {
   setup: () => Promise<void>;
   teardown: () => Promise<void>;
   getLanguage: () => string;

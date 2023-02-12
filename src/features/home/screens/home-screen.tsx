@@ -7,12 +7,12 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import {useTranslation} from '@services/i18n/i18n-provider';
+import {useTranslation} from '@services/i18n/i18n-hooks';
 import {useStylesWithTheme} from '@services/themes/theme-hooks';
 import type {Theme} from '@services/themes/theme-interfaces';
 
 export function HomeScreen(): JSX.Element {
-  const {t} = useTranslation();
+  const {t} = useTranslation('home');
   const styles = useStylesWithTheme(getStyles);
 
   return (
