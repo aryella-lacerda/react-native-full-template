@@ -4,6 +4,7 @@ import type {Theme as ReactNavigationTheme} from '@react-navigation/native';
 
 export interface Theme extends ReactNavigationTheme {
   name: string;
+  barStyle: 'light-content' | 'dark-content';
 }
 
 export interface ThemeContextInterface {
@@ -12,3 +13,8 @@ export interface ThemeContextInterface {
 }
 
 export type AnyStyle = StyleProp<any>;
+
+export interface StylesWithTheme<T> {
+  styles: T;
+  theme: Theme;
+}
