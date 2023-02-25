@@ -1,6 +1,6 @@
-import path from 'path';
+const path = require('path');
 
-import {dangerReassure} from 'reassure';
+const {dangerReassure} = require('reassure');
 
 console.log('DEBUG');
 console.log(path);
