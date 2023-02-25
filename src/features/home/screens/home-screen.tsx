@@ -13,11 +13,11 @@ import type {Theme} from '@services/themes/theme-interfaces';
 
 export function HomeScreen(): JSX.Element {
   const {t} = useTranslation('home');
-  const styles = useStylesWithTheme(getStyles);
+  const {styles, theme} = useStylesWithTheme(getStyles);
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle={'dark-content'} />
+      <StatusBar barStyle={theme.barStyle} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         contentContainerStyle={styles.container}>

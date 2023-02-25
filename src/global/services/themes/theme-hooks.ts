@@ -1,16 +1,24 @@
 import {useContext, useMemo} from 'react';
 
-import type {Theme, ThemeContextInterface, AnyStyle} from './theme-interfaces';
+import type {
+  Theme,
+  ThemeContextInterface,
+  AnyStyle,
+  StylesWithTheme,
+} from './theme-interfaces';
 import {ThemeContext} from './theme-provider';
 
 export const useTheme = (): ThemeContextInterface => useContext(ThemeContext);
 
 export const useStylesWithTheme = <T = AnyStyle>(
-  styles: (theme: Theme) => T,
-): T => {
+  stylesFn: (theme: Theme) => T,
+): StylesWithTheme<T> => {
   const {theme} = useTheme();
 
   return useMemo(() => {
-    return styles(theme);
-  }, [styles, theme]);
+    return {
+      styles: stylesFn(theme),
+      theme,
+    };
+  }, [stylesFn, theme]);
 };
