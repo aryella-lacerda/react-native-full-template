@@ -30,6 +30,7 @@ jobs:
         with:
           test-script: yarn jest
           skip-step: install
+          github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Lint commit message
         uses: wagoid/commitlint-github-action@v5
