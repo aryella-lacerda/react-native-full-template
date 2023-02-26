@@ -40,7 +40,13 @@ jobs:
       - name: Run performance tests
         run: ./perf-tests.sh
 
-      - name: Run Danger.js
-        run: yarn danger ci
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      # - name: Run Danger.js
+      #   run: yarn danger ci
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+      - name: Post performance test results
+        uses: mshick/add-pr-comment@v2
+        with:
+          message-path: '.reassure/output.md'
+          repo-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
