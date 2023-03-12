@@ -1,2 +1,0 @@
-{"metadata":{"branch":"main","commitHash":"12c1b4e97b69904a86c90da6056a415300a10a8a"}}
-{"name":"Measure Home screen performance","runs":10,"meanDuration":0.4,"stdevDuration":0.5163977794943223,"durations":[1,1,1,1,0,0,0,0,0,0],"meanCount":1,"stdevCount":0,"counts":[1,1,1,1,1,1,1,1,1,1]}
