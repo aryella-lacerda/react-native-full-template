@@ -1,11 +1,7 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  StyleSheet,
-} from 'react-native';
+import {SafeAreaView, ScrollView, StatusBar, StyleSheet} from 'react-native';
+
+import {Text} from 'react-native-ama';
 
 import {useTranslation} from '@services/i18n/i18n-hooks';
 import {useStylesWithTheme} from '@services/themes/theme-hooks';

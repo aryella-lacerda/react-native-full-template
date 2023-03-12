@@ -56,7 +56,7 @@
     "prettier": "^2.8.3",
     "react-native-ama": "^0.6.17",
     "react-native-gesture-handler": "^2.9.0",
-    "react-native-reanimated": "^2.14.4",
+    "react-native-reanimated": "^3.0.2",
     "react-test-renderer": "18.2.0",
     "reassure": "^0.7.1",
     "typescript": "*"
