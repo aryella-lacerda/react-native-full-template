@@ -27,3 +27,7 @@ jest.mock('react-i18next', () => ({
     init: () => {},
   },
 }));
+
+jest.mock('react-native-ama', () => ({
+  Text: require('react-native').Text,
+}));
