@@ -19,4 +19,10 @@ module.exports = {
     '@navigation/(.*)': '<rootDir>/src/global/navigation/$1',
     '@features/(.*)': '<rootDir>/src/features/$1',
   },
+  collectCoverageFrom: ['./src/**'],
+  coverageThreshold: {
+    global: {
+      lines: 82,
+    },
+  },
 };

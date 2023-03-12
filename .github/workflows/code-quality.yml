@@ -22,15 +22,8 @@ jobs:
       - name: Install lib dependencies
         uses: bahmutov/npm-install@v1
 
-      # - name: Test code
-      #   run: yarn test --coverage
-
       - name: Test code
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          test-script: yarn jest
-          skip-step: install
-          github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: yarn test --coverage
 
       - name: Lint commit message
         uses: wagoid/commitlint-github-action@v5
@@ -46,11 +39,6 @@ jobs:
 
       - name: Run performance tests
         run: ./perf-tests.sh
-
-      # - name: Run Danger.js
-      #   run: yarn danger ci
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Post performance test results
         uses: mshick/add-pr-comment@v2
