@@ -64,3 +64,8 @@ yarn-error.log
 
 .reassure/
 coverage
+
+# Environment vars
+.env*
+!.env.template
+ios/tmp.xcconfig
