@@ -4,5 +4,6 @@
   "description": "React Native Full Template",
   "repository": "https://github.com/aryella-lacerda/react-native-full-template",
   "author": "Aryella Lacerda <aryella.lacerda@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }

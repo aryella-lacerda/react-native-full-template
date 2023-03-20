@@ -1,4 +1,5 @@
 import React from 'react';
+import codePush from 'react-native-code-push';
 
 import {Root} from './Root';
 
@@ -15,4 +16,4 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default codePush(App);
